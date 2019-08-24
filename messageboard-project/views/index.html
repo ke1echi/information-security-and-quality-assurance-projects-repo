@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to HyperDev!</title>
+    <meta name="description" content="A cool thing made with HyperDev">
+    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./public/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Anonymous Message Board
+      </h1>
+    </header>
+    <div id='userstories' style="text-align: center;">
+      <h2 style="margin-bottom: 20px;">Example Usage</h2>
+      <img src='https://cdn.gomix.com/8f5547a1-a0d6-48f6-aa38-51753a0105f4%2FScreen%20Shot%202017-01-02%20at%201.04.10%20AM.png'>
+      <h6 style="margin-top: 10px; text-align: left;">Fill out the fields - Required</h6>
+    </div>
+    <hr style='margin: 50px'>
+    <div id='testui' style='text-align: center;'>
+        <h3 style="margin-bottom: 20px;">Add New thread (POST /api/threads/:board)</h3>
+        <form action="/api/threads/test" method="post" id="newThread">
+          <input type='text' placeholder='board' id='board1' name='board' style="width: 320px; margin-bottom: 10px;" required=''><br>
+          <textarea type='text' placeholder='Thread text...' name='text' style="width: 320px; height: 100px;" required=''></textarea><br>
+          <input type='text' placeholder='password to delete thread' name='delete_password' style="width: 320px; margin-bottom: 30px; margin-top: 10px;" required=''><br>
+          <input id="submit-btn" type="submit" value="Submit">
+        </form>        
+    </div>
+    <hr style='margin: 50px; margin-top: 200px'>
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+        $('#newThread').submit(function(){
+          var board = $('#board1').val();
+          $(this).attr('action', "/api/threads/" + board);
+        });
+        $('#newReply').submit(function(){
+          var board = $('#board4').val();
+          $(this).attr('action', "/api/replies/" + board);
+        });
+        $('#reportThread').submit(function(e){
+          var url = "/api/threads/"+$('#board2').val();
+          $.ajax({
+            type: "PUT",
+            url: url,
+            data: $(this).serialize(),
+            success: function(data)
+            {
+              alert(data);
+            }
+          });
+          e.preventDefault();
+        });
+        $('#deleteThread').submit(function(e){
+          var url = "/api/threads/"+$('#board3').val();
+          $.ajax({
+            type: "DELETE",
+            url: url,
+            data: $(this).serialize(),
+            success: function(data)
+            {
+              alert(data);
+            }
+          });
+          e.preventDefault();
+        });
+        $('#reportReply').submit(function(e){
+          var url = "/api/replies/"+$('#board5').val();
+          $.ajax({
+            type: "PUT",
+            url: url,
+            data: $(this).serialize(),
+            success: function(data)
+            {
+              alert(data);
+            }
+          });
+          e.preventDefault();
+        });
+        $('#deleteReply').submit(function(e){
+          var url = "/api/replies/"+$('#board6').val();
+          $.ajax({
+            type: "DELETE",
+            url: url,
+            data: $(this).serialize(),
+            success: function(data)
+            {
+              alert(data);
+            }
+          });
+          e.preventDefault();
+        });
+      });
+   </script>
+  </body>
+</html>

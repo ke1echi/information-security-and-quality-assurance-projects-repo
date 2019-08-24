@@ -1,0 +1,40 @@
+    
+body{
+	padding:0;
+	margin:0;
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+    line-height: 1.5em;
+}
+
+#container {
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+}
+
+header h1 {
+	color: black;
+	font-weight: 300;
+	font-size: 3.5rem;
+	margin: 3rem 0;
+	text-align: center;
+}
+
+#userstories {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+	background:#088a63;
+	color: #fff;
+	padding: 20px 20px;
+}
+
+#testui {
+	width: 80%;
+    max-width: 800px;
+    margin: auto;
+	background:#088a63;
+	color: #fff;
+	padding: 20px 20px
+}

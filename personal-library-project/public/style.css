@@ -1,0 +1,40 @@
+body {
+	padding:0;
+	margin:0;
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+  line-height: 1.5em;
+}
+
+#container {
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+}
+
+#userstories {
+	width: 80%;
+  max-width: 800px;
+  margin: auto;
+	background:#088a63;
+	color: #fff;
+	padding: 20px 20px;
+}
+
+#sampleposting {
+	width: 80%;
+	max-width: 800px;
+	margin: auto;
+	background:#088a63;
+	color: #fff;
+	padding: 20px 20px;
+}
+
+#sampleui {
+	width: 80%;
+	max-width: 800px;
+	margin: auto;
+	background:#088a63;
+	color: #fff;
+	padding: 20px 20px;
+}
